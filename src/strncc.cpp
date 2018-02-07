@@ -14,7 +14,7 @@ bool IsHammingDistanceShorterThan(const std::string& a, const std::string& b, in
     int diff = 0;
     while(*pa && *pb) {
         if(toupper(*pa) != toupper(*pb)) {
-            if(++diff >= mm) return false;
+            if(++diff > mm) return false;
         }
         ++pa, ++pb;
     }
@@ -33,6 +33,7 @@ int NumberConnectedComponents(std::vector<std::string> strs, int mmallowed) {
     for(int i = 0; i < strs.size(); ++i) {
         nodes.push_back(g.addNode());
     }
+    // compare each pair of string and add edge if their hamming distance is shorter or equal to threshold
     for(int i = 0; i < strs.size()-1; i++) {
         for(int j = i + 1; j < strs.size(); j++) {
             if(IsHammingDistanceShorterThan(strs[i], strs[j], mmallowed)) {
