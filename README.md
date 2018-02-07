@@ -28,6 +28,14 @@ Rncc::RcppNumberConnectedComponents(c("ACGT", "ACCT", "AccC"), 2) # 1
 dataframe %>% 
     group_by(sample) %>%
     summarise(n_umi=Rncc::RcppNumberConnectedComponents(kmer, 3))
+
+# parallelized version
+library(multidplyr)
+cluster24 = create_cluster(24)
+dataframe %>% 
+    multidplyr::partition(sample, cluster = cluster24) %>%
+    summarise(n_umi=Rncc::RcppNumberConnectedComponents(kmer, 3)) %>%
+    collect()
 ```
 
 ### Benchmark
