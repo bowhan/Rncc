@@ -6,7 +6,7 @@ Simple wrapper of C++ code using Lemon Graph Library to calculate the number of 
 from a graph, whose nodes are strings of the same length and edges are those connecting
 nodes whose hamming distances are shorter than a certain threshold
 
-This is mainly used to collapse UMI. And this package is written to calculate it without leaving the R
+This is mainly used to collapse UMI. And this package is developed to calculate it without leaving the R
 enviroment.
 
 ### Installation
@@ -39,7 +39,6 @@ stringdis_count_cc = function(x, mm) {
   # calculate string distance matrix, then convert it to boolean matrix based on the distance
   strdisedges = melt(as.matrix(stringdistmatrix(x, method="hamming", nthread=32)), na.rm=T)
   if(nrow(strdisedges) > 0) {
-    print("cleaning edge list")
     strdisedges = strdisedges %>% filter(Var1 <= Var2 & value <= mm) %>% select(-value)
     # generate graph based on the matrix
     g = graph_from_data_frame(strdisedges, directed=F)
