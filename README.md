@@ -27,7 +27,7 @@ Rncc::RcppNumberConnectedComponents(c("ACGT", "ACCT", "AccC"), 2) # 1
 # useful case:
 dataframe %>% 
     group_by(sample) %>%
-    summarise(n_umi=Rncc::RcppNumberConnectedComponents(kmer))
+    summarise(n_umi=Rncc::RcppNumberConnectedComponents(kmer, 3))
 ```
 
 ### Benchmark
