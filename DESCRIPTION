@@ -1,0 +1,14 @@
+Package: Rncc
+Title: An R package wrapping C++ code using Lemon to find connected components from graph built from string hamming distances
+Version: 0.0.0.1
+Date: 2018-02-07
+Author: Bo Han
+Maintainer: Bo Han <bowhan@me.com>
+Description: An R package wrapping C++ code using Lemon to find connected components from graph built from string hamming distances
+Depends: R (>= 2.15.1)
+Imports: Rcpp
+LinkingTo: Rcpp
+Suggests: RUnit 
+URL: http://github.com/bowhan/rncc/issues
+BugReports: https://github.com/bowhan/rncc/issues
+License: GPL (>= 2)
