@@ -1,14 +1,15 @@
 Package: Rncc
-Title: An R package wrapping C++ code using Lemon to find connected components from graph built from string hamming distances
-Version: 0.0.0.1
+Title: To find connected components from graph built from string hamming distances
+Version: 0.0.1.0
 Date: 2018-02-07
 Author: Bo Han
 Maintainer: Bo Han <bowhan@me.com>
-Description: An R package wrapping C++ code using Lemon to find connected components from graph built from string hamming distances
-Depends: R (>= 2.15.1)
+Description: Simple wrapper of C++ code using Lemon Graph Library to calculate the number of connected components from a graph, whose nodes are strings of the same length and edges are those connecting nodes whose hamming distances are shorter than a certain threshold. This is mainly used to collapse UMI. And this package is developed to calculate it without leaving the R enviroment.
+Depends: R (>= 3.1.0)
 Imports: Rcpp
 LinkingTo: Rcpp
 Suggests: RUnit 
-URL: http://github.com/bowhan/rncc/issues
+URL: http://github.com/bowhan/rncc
 BugReports: https://github.com/bowhan/rncc/issues
 License: GPL (>= 2)
+RoxygenNote: 6.0.1
