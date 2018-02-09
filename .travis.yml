@@ -1,0 +1,23 @@
+language: r
+sudo: required
+dist: trusty
+
+r_github_packages:
+  - r-lib/covr
+
+before_install:
+  - bash install_prerequisite.sh
+
+script:
+  - Rscript -e 'devtools::install_github("bowhan/Rncc")'
+  - Rscript -e "library(testthat);test_dir('tests');"
+
+after_success:
+  - Rscript -e 'covr::codecov()'
+
+notifications:
+  email:
+    recipients:
+      - bowhan@me.com
+    on_success: change
+    on_failure: always
