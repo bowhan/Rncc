@@ -4,6 +4,8 @@ dist: trusty
 
 r_packages:
   - covr
+  - readr 
+  - dplyr
 
 before_install:
   - bash install_prerequisite.sh
