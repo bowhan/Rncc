@@ -1,4 +1,5 @@
 # Rncc
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/811be06a238a4acf99e80e4dd28d768c)](https://www.codacy.com/app/bowhan/Rncc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bowhan/Rncc&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/bowhan/Rncc.svg?branch=master)](https://travis-ci.org/bowhan/Rncc)
 [![codecov](https://codecov.io/gh/bowhan/rncc/branch/master/graph/badge.svg)](https://codecov.io/gh/bowhan/rncc)
 
