@@ -6,7 +6,7 @@ r_packages:
   - covr
 
 before_install:
-  - bash install_prerequisite.sh
+  - sudo bash install_prerequisite.sh
 
 script:
   - Rscript -e 'devtools::install_github("bowhan/Rncc")'
