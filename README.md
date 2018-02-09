@@ -1,4 +1,6 @@
 # Rncc
+[![Build Status](https://travis-ci.org/bowhan/Rncc.svg?branch=master)](https://travis-ci.org/bowhan/Rncc)
+[![codecov](https://codecov.io/gh/bowhan/rncc/branch/master/graph/badge.svg)](https://codecov.io/gh/bowhan/rncc)
 
 ### Introduction
 

@@ -2,8 +2,8 @@ language: r
 sudo: required
 dist: trusty
 
-r_github_packages:
-  - r-lib/covr
+r_packages:
+  - covr
 
 before_install:
   - bash install_prerequisite.sh
