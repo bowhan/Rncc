@@ -1,3 +1,4 @@
 useDynLib(Rncc)
 export(RcppNumberConnectedComponents)
+export(RcppConnectedComponents)
 importFrom(Rcpp, evalCpp)

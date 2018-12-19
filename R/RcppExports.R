@@ -5,3 +5,7 @@ NumberConnectedComponents <- function(strs, mmallowed) {
     .Call('_Rncc_NumberConnectedComponents', PACKAGE = 'Rncc', strs, mmallowed)
 }
 
+ConnectedComponents <- function(strs, mmallowed) {
+    .Call('_Rncc_ConnectedComponents', PACKAGE = 'Rncc', strs, mmallowed)
+}
+

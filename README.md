@@ -22,6 +22,7 @@ install_github("bowhan/Rncc")
 ```
 
 ### Usage
+#### Count the number of Connected Components (UMIs)
 ```r
 library(Rncc)
 # simple case
@@ -39,6 +40,23 @@ dataframe %>%
     multidplyr::partition(sample, cluster = cluster24) %>%
     summarise(n_umi=Rncc::RcppNumberConnectedComponents(kmer, 3)) %>%
     collect()
+```
+
+#### Assign each kmer to connected components
+```r
+library(Rncc)
+df = tibble(kmers=c("ACCC", "TTCC", "GCCC", "GCCC", "TTTC", "TTCC"))
+df %>% mutate(ncc_id = Rncc::RcppConnectedComponents(strs, 1))
+
+#   A tibble: 6 x 2
+#   kmers ncc_id
+#   <chr>  <dbl>
+# 1 ACCC       1
+# 2 TTCC       0
+# 3 GCCC       1
+# 4 GCCC       1
+# 5 TTTC       0
+# 6 TTCC       0
 ```
 
 ### Benchmark

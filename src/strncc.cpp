@@ -43,3 +43,29 @@ int NumberConnectedComponents(std::vector<std::string> strs, int mmallowed) {
     }
     return lemon::countConnectedComponents(g);
 }
+
+// [[Rcpp::export]]
+NumericVector ConnectedComponents(std::vector<std::string> strs, int mmallowed) {
+    lemon::ListGraph g;
+    std::vector<lemon::ListGraph::Node> nodes;
+    nodes.reserve(strs.size());
+    // add all nodes
+    for(int i = 0; i < strs.size(); ++i) {
+        nodes.push_back(g.addNode());
+    }
+    // compare each pair of string and add edge if their hamming distance is shorter or equal to threshold
+    for(int i = 0; i < strs.size()-1; i++) {
+        for(int j = i + 1; j < strs.size(); j++) {
+            if(IsHammingDistanceShorterThan(strs[i], strs[j], mmallowed)) {
+                g.addEdge(nodes[i], nodes[j]);
+            }
+        }
+    }
+    lemon::ListGraph::NodeMap<int> map(g);
+    int ncc = lemon::connectedComponents(g, map);
+    NumericVector ids;
+    for(int i = 0; i < nodes.size(); ++i) {
+        ids.insert(i, map[nodes[i]]);
+    }
+    return ids;
+}

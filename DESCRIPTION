@@ -1,6 +1,6 @@
 Package: Rncc
 Title: To find connected components from graph built from string hamming distances
-Version: 0.0.1.0
+Version: 0.0.2.0
 Date: 2018-02-07
 Author: Bo Han
 Maintainer: Bo Han <bowhan@me.com>
@@ -12,4 +12,4 @@ Suggests: testthat
 URL: http://github.com/bowhan/rncc
 BugReports: https://github.com/bowhan/rncc/issues
 License: GPL (>= 2)
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
